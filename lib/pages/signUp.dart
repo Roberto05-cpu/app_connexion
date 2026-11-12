@@ -1,5 +1,6 @@
 import 'package:app_connexion/widgets/text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:app_connexion/pages/login.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -152,21 +153,31 @@ class _SignUpState extends State<SignUp> {
                     Expanded(child: Divider(color: Colors.grey.shade300)),
                   ],
                 ),
-                SizedBox(height: 16,),
+                SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(Icons.g_mobiledata),
-                    SizedBox(width: 20,),
+                    SizedBox(width: 20),
                     Icon(Icons.facebook_rounded),
                   ],
                 ),
-                SizedBox(height: 16,),
+                SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Already have an account?'),
-                    Text('Log in >', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Login(),
+                          ),
+                        );
+                      },
+                      child: Text('Log in >', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                    ),
                   ],
                 ),
               ],

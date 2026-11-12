@@ -1,5 +1,6 @@
 import 'package:app_connexion/widgets/text_field.dart';
 import 'package:flutter/material.dart';
+import 'package:app_connexion/pages/signUp.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -106,7 +107,10 @@ class _LoginState extends State<Login> {
                   height: 55,
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Color.fromARGB(255, 162, 92, 237), Color(0xFF7C3AED)],
+                      colors: [
+                        Color.fromARGB(255, 162, 92, 237),
+                        Color(0xFF7C3AED),
+                      ],
                     ),
                     borderRadius: BorderRadius.circular(14),
                   ),
@@ -142,21 +146,26 @@ class _LoginState extends State<Login> {
                     Expanded(child: Divider(color: Colors.grey.shade300)),
                   ],
                 ),
-                SizedBox(height: 16,),
+                SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.g_mobiledata, size: 50,),
-                    SizedBox(width: 20,),
-                    Icon(Icons.facebook_rounded, size: 50,),
+                    Icon(Icons.g_mobiledata, size: 50),
+                    SizedBox(width: 20),
+                    Icon(Icons.facebook_rounded, size: 50),
                   ],
                 ),
-                SizedBox(height: 16,),
+                SizedBox(height: 16),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text('Not registered yet?'),
-                    Text('Sign Up >', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text('Sign Up >', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)),
+                    ),
                   ],
                 ),
               ],
